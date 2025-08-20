@@ -26,17 +26,20 @@ function criar(prompt, menu, Baralhos, Flashcards, escolha) {
         })
 
         let escolhaBaralho = prompt ("Digite o ID do baralho no qual deseja adicionar seu flashcard: ")
-        Baralhos.forEach(baralho => {
-            if (baralho.id === parseInt(escolhaBaralho, 10)) {
+
+        const baralhoEncontrado = Baralhos.find(b => b.id === parseInt(escolhaBaralho, 10))
+            if (baralhoEncontrado) {
                 let pergunta = prompt ("Digite a pergunta do seu flashcard: ")
                 if (pergunta.trim() === '') {
                     console.log('Erro! Pergunta invalida.')
                     criar(prompt, menu, Baralhos, Flashcards, escolha)
+                    return
                 }
                 let resposta = prompt ("Digite a resposta do seu flashcard: ")
                 if (resposta.trim() === '') {
                     console.log('Erro! Resposta invalida.')
                     criar(prompt, menu, Baralhos, Flashcards, escolha)
+                    return
                 }
 
                 const flashcard = {
@@ -53,11 +56,11 @@ function criar(prompt, menu, Baralhos, Flashcards, escolha) {
                 } else if (voltarMenu.toLowerCase() == 's'){
                     criar(prompt, menu, Baralhos, Flashcards, escolha)
                 }
-            }
-
-            })
+                
+            } else {
                 console.log("ID invalido!")
                 criar(prompt, menu, Baralhos, Flashcards, escolha)
+            }
 }
 }
 

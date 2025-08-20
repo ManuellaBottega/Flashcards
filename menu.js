@@ -35,19 +35,19 @@ function menu () {
             listar(prompt, menu, Baralhos, Flashcards)
             break
         case '4':
-            atualizar(prompt, menu, Baralhos, escolha)
+            atualizar(prompt, menu, Baralhos, Flashcards, escolha)
             break
         case '5':
-            atualizar(prompt, menu, Baralhos, escolha)
+            atualizar(prompt, menu, Baralhos, Flashcards, escolha)
             break
         case '6':
-            buscar(prompt, menu, Baralhos)
+            buscar(prompt, menu, Baralhos, Flashcards)
             break
         case '7':
-            excluir(prompt, menu, Baralhos, escolha)
+            excluir(prompt, menu, Baralhos, Flashcards, escolha)
             break
         case '8':
-            excluir(prompt, menu, Baralhos, escolha)
+            excluir(prompt, menu, Baralhos, Flashcards, escolha)
             break
         case '9':
             console.log('Obrigado por usar nosso sistema de consultas. Até mais!')
